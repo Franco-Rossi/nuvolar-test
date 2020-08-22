@@ -1,1 +1,16 @@
-<div *ngIf="user">{{ user.login }} {{ user.followers }}</div>
+<div class="container" *ngIf="user">
+  <div class="row">
+    <div class="card col-12 col-md-4">
+      <div class="card-body text-center">
+        <img class="avatar" src="{{ user.avatar_url }}" alt="" />
+        <h3>{{ user.name }}</h3>
+        <small>{{ user.login }}</small>
+        <p>{{ user.bio }}</p>
+      </div>
+    </div>
+    <div class="col-12 col-md-8 row">
+      <div class="col-12">Followers</div>
+      <div class="col-12">Repos</div>
+    </div>
+  </div>
+</div>
