@@ -23,7 +23,7 @@ export class SearchComponent implements OnInit {
   }
 
   searchUser() {
-    this.searchService.searchUser(this.searchInput).subscribe((success) => {
+    this.searchService.searchUsers(this.searchInput).subscribe((success) => {
       this.users = success['items'];
     });
   }

@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'user/:id',
     component: UserComponent,
   },
+  {
+    path: '**',
+    component: HomeComponent,
+  },
 ];
 
 @NgModule({
