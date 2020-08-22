@@ -1,3 +1,7 @@
 <div class="card" routerLink="/user/{{ user.login }}">
-  <div class="card-header">{{ user.login }}</div>
+  <div class="card-header">
+    <img class="avatar" src="{{ user.avatar_url }}" alt="" />
+
+    {{ user.login }}
+  </div>
 </div>
