@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SearchService } from '../../services/search.service';
 import { User } from '../../models/user.model';
+import { Follower } from '../../models/follower.model';
 
 @Component({
   selector: 'app-user',
@@ -18,6 +19,8 @@ export class UserComponent implements OnInit {
   }
 
   user: User;
+  followers: Follower[];
+  repos;
 
   ngOnInit(): void {}
 
@@ -26,5 +29,17 @@ export class UserComponent implements OnInit {
       this.user = success;
       console.log(this.user);
     });
+
+    this.searchService.getUserRepos(id).subscribe((success) => {
+      this.repos = success;
+      console.log(this.repos);
+    });
+
+    this.searchService.getUserFollowers(id).subscribe((success) => {
+      this.followers = success;
+      console.log(this.followers);
+    });
   }
+
+  getUserInfo() {}
 }
