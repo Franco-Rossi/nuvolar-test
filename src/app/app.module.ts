@@ -9,9 +9,10 @@ import { SearchComponent } from './routes/search/search.component';
 import { HomeComponent } from './routes/home/home.component';
 import { UserComponent } from './routes/user/user.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { UserBlockComponent } from './components/user-block/user-block.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchComponent, HomeComponent, UserComponent, SearchBarComponent],
+  declarations: [AppComponent, SearchComponent, HomeComponent, UserComponent, SearchBarComponent, UserBlockComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   exports: [],

@@ -12,10 +12,4 @@ export class SearchBarComponent implements OnInit {
   search: string;
 
   ngOnInit(): void {}
-
-  searchUser() {
-    this.searchService.searchUser(this.search).subscribe((success) => {
-      console.log(success);
-    });
-  }
 }
