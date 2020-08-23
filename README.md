@@ -28,6 +28,12 @@
 * The project supports code splitting for each pages by properly using the Angular components.
 * Analyse that the app is production ready by using Google’s PageSpeed or Lighthouse.
 
+## Endpoints
+`/search/:input`
+Search user by login name
+
+`/user/:id`
+See user profile where :id is the login name
 
 ## Deploy server
 
