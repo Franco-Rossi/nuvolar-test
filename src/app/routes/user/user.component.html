@@ -1,26 +1,47 @@
 <div class="container" *ngIf="user">
-  <div class="row">
-    <div class="card col-12 col-md-4">
-      <div class="card-body">
-        <img class="avatar" src="{{ user.avatar_url }}" alt="" />
-        <h3>{{ user.name }}</h3>
-        <small>{{ user.login }}</small>
-        <p>{{ user.bio }}</p>
+  <div class="row justify-content-around">
+    <div class="col-12 col-md-4 mb-2 row">
+      <div class="card">
+        <div class="card-body">
+          <div class="row justify-content-center text-center">
+            <img class="avatar img-fluid" src="{{ user.avatar_url }}" alt="" />
+            <h3 class="mb-0 col-12">{{ user.name }}</h3>
+            <small class="text-muted col-12">{{ user.login }}</small>
+          </div>
+          <p>{{ user.bio }}</p>
+          <ul class="list-unstyled">
+            <li *ngIf="user.following">
+              <small><i class="fas fa-user-friends mr-1"></i>{{ user.following }} following</small>
+            </li>
+            <li *ngIf="user.followers">
+              <small><i class="fas fa-users mr-1"></i>{{ user.followers }} followers</small>
+            </li>
+            <li *ngIf="user.location">
+              <small><i class="fas fa-map-marker-alt mr-1"></i>{{ user.location }}</small>
+            </li>
+            <li *ngIf="user.email">
+              <small><i class="far fa-envelope mr-1"></i>{{ user.email }}</small>
+            </li>
+            <li *ngIf="user.blog">
+              <small><i class="fas fa-link mr-1"></i>{{ user.blog }}</small>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="col-12 col-md-8 row">
-      <div class="col-12 card">
-        <div class="card-header">Repos</div>
+    <div class="col-12 col-md-7 row">
+      <div class="col-12 card mb-2 p-0">
+        <div class="card-header">Repositories</div>
         <div class="card-body row">
-          <div class="col-6 col-md-6" *ngFor="let repo of repos">
+          <div class="col-12 col-md-6" *ngFor="let repo of repos">
             <a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
           </div>
         </div>
       </div>
-      <div class="col-12 card">
+      <div class="col-12 card mb-2 p-0">
         <div class="card-header">Followers</div>
         <div class="card-body row">
-          <div class="col-6 col-md-4" *ngFor="let follower of followers">
+          <div class="col-12 col-md-4" *ngFor="let follower of followers">
             <a routerLink="/user/{{ follower.login }}"
               ><img class="follower-avatar mr-2" src="{{ follower.avatar_url }}" alt="" />{{ follower.login }}</a
             >
