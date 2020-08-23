@@ -4,11 +4,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './routes/home/home.component';
 import { SearchComponent } from './routes/search/search.component';
 import { UserComponent } from './routes/user/user.component';
+import { NotFoundComponent } from './routes/not-found/not-found.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: SearchComponent,
+  },
+  {
+    path: 'search',
+    component: SearchComponent,
   },
   {
     path: 'search/:input',
@@ -20,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: HomeComponent,
+    component: NotFoundComponent,
   },
 ];
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../../services/search.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-bar',
@@ -8,7 +8,11 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./search-bar.component.scss'],
 })
 export class SearchBarComponent implements OnInit {
-  constructor(protected searchService: SearchService, protected activatedRoute: ActivatedRoute) {}
+  constructor(
+    protected searchService: SearchService,
+    protected activatedRoute: ActivatedRoute,
+    protected router: Router
+  ) {}
 
   search: string;
 
@@ -18,5 +22,9 @@ export class SearchBarComponent implements OnInit {
         this.search = params.input;
       }
     });
+  }
+
+  searchUsers() {
+    this.router.navigate([`/search/${this.search}`]);
   }
 }
