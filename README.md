@@ -36,3 +36,7 @@ Run `ng build --prod` and then `npm start` for a server. Navigate to `http://loc
 ## Heroku App
 
 The last version of the app is live on [https://nuvolar.herokuapp.com/](https://nuvolar.herokuapp.com/).
+
+## Docker image
+Docker image can be found on [https://hub.docker.com/repository/docker/rossifranco/nuvolar-test](https://hub.docker.com/repository/docker/rossifranco/nuvolar-test) or you can pull it runing `docker pull rossifranco/nuvolar-test:latest` and then `docker container run -p 8080:80 "image-name"`.
+
