@@ -9,19 +9,21 @@ import { NotFoundComponent } from './routes/not-found/not-found.component';
 const routes: Routes = [
   {
     path: '',
-    component: SearchComponent,
+    component: HomeComponent,
   },
   {
     path: 'search',
-    component: SearchComponent,
+    component: HomeComponent,
   },
   {
     path: 'search/:input',
     component: SearchComponent,
+    data: { animation: 'isLeft' },
   },
   {
     path: 'user/:id',
     component: UserComponent,
+    data: { animation: 'isRight' },
   },
   {
     path: '**',

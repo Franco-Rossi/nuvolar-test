@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './routes/search/search.component';
@@ -14,8 +16,17 @@ import { NavComponent } from './components/nav/nav.component';
 import { NotFoundComponent } from './routes/not-found/not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchComponent, HomeComponent, UserComponent, SearchBarComponent, UserBlockComponent, NavComponent, NotFoundComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    SearchComponent,
+    HomeComponent,
+    UserComponent,
+    SearchBarComponent,
+    UserBlockComponent,
+    NavComponent,
+    NotFoundComponent,
+  ],
+  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   exports: [],
   bootstrap: [AppComponent],
