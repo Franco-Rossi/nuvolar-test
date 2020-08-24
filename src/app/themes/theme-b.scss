@@ -1,0 +1,38 @@
+// DARK MODE
+$content-bg: #242424;
+$text: #ffffff;
+
+$block-bg: #2b2b2b;
+$block-hover-bg: #333333;
+$block-header-bg: #383838;
+
+// LAYOUT
+body,
+.wrapper .section-container {
+  background-color: $content-bg;
+  color: $text;
+}
+
+// USER BLOCK
+.user-block {
+  background-color: $block-bg;
+
+  .avatar {
+    border: 1px solid #c2c2c2;
+  }
+  &.card:hover .card-body {
+    cursor: pointer;
+    transition: all 0.4s;
+    background-color: $block-hover-bg;
+  }
+}
+
+// USER PROFILE
+.user {
+  .card-header {
+    background-color: $block-header-bg;
+  }
+  .card-body {
+    background-color: $block-bg;
+  }
+}

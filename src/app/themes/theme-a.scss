@@ -1,0 +1,38 @@
+// LIGHT MODE
+$content-bg: #ffffff;
+$text: #000000;
+
+$block-bg: #ececec;
+$block-header-bg: rgba(0, 0, 0, 0.03);
+$block-hover-bg: #cecece;
+
+// LAYOUT
+body,
+.wrapper .section-container {
+  background-color: $content-bg;
+  color: $text;
+}
+
+// USER BLOCK
+.user-block {
+  background-color: $block-bg;
+
+  .avatar {
+    border: 1px solid #c2c2c2;
+  }
+  &.card:hover .card-body {
+    cursor: pointer;
+    transition: all 0.4s;
+    background-color: $block-hover-bg;
+  }
+}
+
+// USER PROFILE
+.user {
+  .card-header {
+    background-color: $block-header-bg;
+  }
+  .card-body {
+    background-color: $block-bg;
+  }
+}

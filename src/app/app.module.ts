@@ -14,6 +14,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { UserBlockComponent } from './components/user-block/user-block.component';
 import { NavComponent } from './components/nav/nav.component';
 import { NotFoundComponent } from './routes/not-found/not-found.component';
+import { ThemesService } from './services/theme.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { NotFoundComponent } from './routes/not-found/not-found.component';
     NotFoundComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [],
+  providers: [ThemesService],
   exports: [],
   bootstrap: [AppComponent],
 })
