@@ -30,6 +30,7 @@ export class UserComponent implements OnInit {
     this.searchService.getUser(id).subscribe(
       (success) => {
         this.user = success;
+        this.error = false;
       },
       (error) => {
         this.getRateLimit();

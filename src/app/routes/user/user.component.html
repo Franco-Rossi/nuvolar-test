@@ -1,8 +1,8 @@
-<div class="container" *ngIf="user">
+<div class="container">
   <div class="bg-warning text-center mb-2" *ngIf="error">
     Github API request limit reached, please wait until {{ rate_limit }} to make new requests.
   </div>
-  <div class="row justify-content-around user">
+  <div class="row justify-content-around user" *ngIf="user">
     <div class="col-12 col-md-4 mb-2 row">
       <div class="card profile">
         <div class="card-body">
