@@ -21,13 +21,20 @@ export class UserComponent implements OnInit {
   user: User;
   followers: Follower[];
   repos;
+  error: boolean = false;
+  rate_limit: string;
 
   ngOnInit(): void {}
 
   searchUserProfile(id) {
-    this.searchService.getUser(id).subscribe((success) => {
-      this.user = success;
-    });
+    this.searchService.getUser(id).subscribe(
+      (success) => {
+        this.user = success;
+      },
+      (error) => {
+        this.getRateLimit();
+      }
+    );
 
     this.searchService.getUserRepos(id).subscribe((success) => {
       this.repos = success;
@@ -38,5 +45,22 @@ export class UserComponent implements OnInit {
     });
   }
 
-  getUserInfo() {}
+  getRateLimit() {
+    this.searchService.getRateLimit().subscribe((success) => {
+      this.error = true;
+      this.rate_limit = this.unixToTime(success['rate']['reset']);
+    });
+  }
+
+  unixToTime(unix) {
+    var d = new Date(unix * 1000),
+      hh = d.getHours(),
+      h = hh,
+      min = ('0' + d.getMinutes()).slice(-2),
+      time;
+
+    time = h + ':' + min;
+
+    return time;
+  }
 }

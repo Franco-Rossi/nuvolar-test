@@ -26,4 +26,8 @@ export class SearchService {
   getUserFollowers(id: string) {
     return this.http.get<Follower[]>(`${environment.apiSearch}/users/${id}/followers`);
   }
+
+  getRateLimit() {
+    return this.http.get<Follower[]>(`${environment.apiSearch}/rate_limit`);
+  }
 }

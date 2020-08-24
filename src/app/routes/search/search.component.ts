@@ -12,6 +12,8 @@ export class SearchComponent implements OnInit {
 
   searchInput: string;
   users: any[];
+  error: boolean = false;
+  rate_limit: string;
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
@@ -23,8 +25,33 @@ export class SearchComponent implements OnInit {
   }
 
   searchUser() {
-    this.searchService.searchUsers(this.searchInput).subscribe((success) => {
-      this.users = success['items'];
+    this.searchService.searchUsers(this.searchInput).subscribe(
+      (success) => {
+        this.users = success['items'];
+        this.error = false;
+      },
+      (error) => {
+        this.getRateLimit();
+      }
+    );
+  }
+
+  getRateLimit() {
+    this.searchService.getRateLimit().subscribe((success) => {
+      this.error = true;
+      this.rate_limit = this.unixToTime(success['resources']['search']['reset']);
     });
+  }
+
+  unixToTime(unix) {
+    var d = new Date(unix * 1000),
+      hh = d.getHours(),
+      h = hh,
+      min = ('0' + d.getMinutes()).slice(-2),
+      time;
+
+    time = h + ':' + min;
+
+    return time;
   }
 }
