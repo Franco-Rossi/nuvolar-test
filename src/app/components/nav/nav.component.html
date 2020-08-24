@@ -1,6 +1,6 @@
-<nav class="navbar navbar-dark bg-dark justify-content-start mb-4">
-  <a class="navbar-brand d-none d-md-block" routerLink="/">Github API</a>
-  <app-search-bar class="col-10 col-md-8"></app-search-bar>
+<nav class="navbar navbar-dark bg-dark justify-content-between mb-4">
+  <a class="navbar-brand d-none d-lg-block" routerLink="/">Github API</a>
+  <app-search-bar class="col-9 col-md-8"></app-search-bar>
   <div class="custom-control custom-switch col-2">
     <input
       type="checkbox"
@@ -10,6 +10,6 @@
       (ngModelChange)="setTheme()"
       id="darkMode"
     />
-    <label class="custom-control-label" for="darkMode"><i class="fas fa-moon text-white"></i></label>
+    <label class="custom-control-label" for="darkMode"><i class="fas fa-moon text-white d-none d-lg-inline"></i></label>
   </div>
 </nav>
